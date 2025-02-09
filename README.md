@@ -1,1 +1,145 @@
 # mi-propuestaaa
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Podría ser mi novia?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- Fuente Pacifico -->
+    <style>
+        body {
+            font-family: 'Pacifico', cursive; /* Cambié la fuente a Pacifico */
+            text-align: center;
+            background-color: #ffd000;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #d81b60;
+        }
+        .gif-container img {
+            width: 250px;
+            height: auto;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            position: relative;
+            transition: transform 0.2s;
+        }
+        #yesBtn {
+            background-color: #28a745;
+        }
+        #yesBtn:hover {
+            background-color: #218838; /* Efecto hover para el botón verde */
+            transform: scale(1.05); /* Efecto de agrandar el botón */
+        }
+        #noBtn {
+            background-color: #dc3545;
+            position: absolute;
+        }
+        #noBtn:hover {
+            background-color: #c82333;
+        }
+        #yellowBtnCelebration {
+            background-color: #ffc107; /* Color amarillo */
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            font-size: 1.2em;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 100;
+        }
+        #yellowBtnCelebration:hover {
+            background-color: #e0a800; /* Efecto hover para el botón amarillo */
+            transform: scale(1.05); /* Efecto de agrandar el botón */
+        }
+        #yellowBtnSong {
+            background-color: #ffc107; /* Color amarillo */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1.2em;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 100;
+        }
+        #yellowBtnSong:hover {
+            background-color: #e0a800; /* Efecto hover para el botón amarillo */
+            transform: scale(1.05); /* Efecto de agrandar el botón */
+        }
+        #mensaje {
+            font-size: 1.5em;
+            color: #d81b60;
+            margin-top: 20px;
+            position: absolute;
+            top: 40px; /* Posición hacia arriba del título */
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Mensaje YEEII 💗 -->
+    <p id="mensaje" style="display:none;">YEEII 💗</p>
+
+    <div class="container">
+        <h1>¿Podrías ser mi novia?</h1>
+        <div class="gif-container">
+            <img src="https://media.tenor.com/m1st4f2QovMAAAAM/love-you-sissy.gif" alt="Love Gif">
+        </div>
+        <div class="buttons">
+            <button id="yesBtn" onclick="mostrarMensaje()">Sí 💗</button>
+            <button id="noBtn" onmouseover="moverBoton()">No :(</button>
+        </div>
+    </div>
+
+    <!-- Nuevo botón amarillo para Celebración -->
+    <button id="yellowBtnCelebration" onclick="window.location.href='https://youtu.be/54jBvSfcteM?si=uhd6Ol-jWSKm2nRb';">Celebración</button>
+
+    <!-- Nuevo botón amarillo para Canción -->
+    <button id="yellowBtnSong" onclick="window.location.href='https://youtu.be/E0UN-pVTLf4?si=zQ65qZwl6F7NFiCI';">Canción</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        let yesBtn = document.getElementById('yesBtn');
+
+        function mostrarMensaje() {
+            document.getElementById('mensaje').style.display = 'block';
+            lanzarConfeti(); // Llamamos a la función para mostrar confeti
+        }
+
+        function moverBoton() {
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            document.getElementById('noBtn').style.left = x + 'px';
+            document.getElementById('noBtn').style.top = y + 'px';
+            yesBtn.style.transform = 'scale(' + (yesBtn.getBoundingClientRect().width / 100 + 1) + ')';
+        }
+
+        // Función para lanzar el confeti
+        function lanzarConfeti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { x: 0.5, y: 0.5 },
+                colors: ['#ff0', '#ff5c8d', '#4b3cc5', '#0a7e7f']
+            });
+        }
+    </script>
+</body>
+</html>
